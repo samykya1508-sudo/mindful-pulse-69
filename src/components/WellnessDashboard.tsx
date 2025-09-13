@@ -52,52 +52,52 @@ const WellnessDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-background">
       {/* Hero Section */}
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-80 overflow-hidden">
         <img 
           src={wellnessHero} 
           alt="Wellness Hero" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-wellness/80 flex items-center justify-center">
-          <div className="text-center text-white space-y-2">
-            <h1 className="text-3xl md:text-4xl font-bold">
+        <div className="absolute inset-0 bg-gradient-hero-overlay flex items-center justify-center">
+          <div className="text-center text-white space-y-4 px-4">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
               Student Wellness Monitor
             </h1>
-            <p className="text-lg opacity-90">
-              Track your mental health journey with daily check-ins
+            <p className="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">
+              Track your mental health journey with daily check-ins and personalized insights
             </p>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8 space-y-8">
+      <div className="container mx-auto px-4 py-12 space-y-12">
         {/* Welcome Message */}
-        <div className="text-center space-y-2">
-          <h2 className="text-2xl font-semibold text-foreground">
+        <div className="text-center space-y-4 py-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Welcome back! {todayCheckedIn ? "You've checked in today 🎉" : "Ready for your daily check-in?"}
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             {todayCheckedIn 
-              ? "Great job staying consistent with your wellness journey!"
-              : "Take a moment to reflect on how you're feeling today."
+              ? "Great job staying consistent with your wellness journey! Keep up the amazing work."
+              : "Take a moment to reflect on how you're feeling today. Your mental health journey starts here."
             }
           </p>
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
-            <Card key={index} className="shadow-card-custom bg-gradient-card border-0 animate-slide-up" style={{ animationDelay: `${index * 100}ms` }}>
-              <CardContent className="p-6 text-center">
-                <div className={`inline-flex p-3 rounded-full bg-primary/10 ${stat.color} mb-3`}>
+            <Card key={index} className="shadow-wellness bg-gradient-card border-0 animate-slide-up hover:scale-105 transition-all duration-300" style={{ animationDelay: `${index * 100}ms` }}>
+              <CardContent className="p-8 text-center">
+                <div className={`inline-flex p-4 rounded-full bg-primary/10 ${stat.color} mb-4`}>
                   {stat.icon}
                 </div>
-                <div className="text-2xl font-bold text-foreground mb-1">
+                <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-base text-muted-foreground">
                   {stat.title}
                 </div>
               </CardContent>
@@ -106,9 +106,9 @@ const WellnessDashboard = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column */}
-          <div className="space-y-8">
+          <div className="space-y-10">
             {!todayCheckedIn && (
               <MoodCheckIn onMoodSubmit={handleMoodSubmit} />
             )}
@@ -116,7 +116,7 @@ const WellnessDashboard = () => {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-8">
+          <div className="space-y-10">
             <MoodTrends moodHistory={moodHistory} />
             
             {/* Quick Access Card */}

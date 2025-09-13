@@ -17,7 +17,7 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        background: "var(--gradient-background)",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -125,6 +125,8 @@ export default {
         "gradient-wellness": "var(--gradient-wellness)",
         "gradient-calm": "var(--gradient-calm)",
         "gradient-card": "var(--gradient-card)",
+        "gradient-hero-overlay": "var(--gradient-hero-overlay)",
+        "gradient-background": "var(--gradient-background)",
       },
       boxShadow: {
         "wellness": "var(--shadow-wellness)",
