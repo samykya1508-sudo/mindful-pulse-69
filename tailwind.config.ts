@@ -47,6 +47,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        wellness: {
+          calm: "hsl(var(--wellness-calm))",
+          positive: "hsl(var(--wellness-positive))",
+          warm: "hsl(var(--wellness-warm))",
+          neutral: "hsl(var(--wellness-neutral))",
+          sad: "hsl(var(--wellness-sad))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -80,10 +87,49 @@ export default {
             height: "0",
           },
         },
+        "pulse-gentle": {
+          "0%, 100%": {
+            opacity: "1",
+          },
+          "50%": {
+            opacity: "0.8",
+          },
+        },
+        "slide-up": {
+          from: {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "mood-bounce": {
+          "0%, 100%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(1.05)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-gentle": "pulse-gentle 2s ease-in-out infinite",
+        "slide-up": "slide-up 0.3s ease-out",
+        "mood-bounce": "mood-bounce 0.6s ease-in-out",
+      },
+      backgroundImage: {
+        "gradient-wellness": "var(--gradient-wellness)",
+        "gradient-calm": "var(--gradient-calm)",
+        "gradient-card": "var(--gradient-card)",
+      },
+      boxShadow: {
+        "wellness": "var(--shadow-wellness)",
+        "card-custom": "var(--shadow-card)",
+        "hover-wellness": "var(--shadow-hover)",
       },
     },
   },
